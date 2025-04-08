@@ -1,4 +1,5 @@
 import sqlite3 as sq
+from todo import app
 
 connection = sq.connect("data.db")
 
