@@ -1,10 +1,12 @@
-import sqlite3 as sq
-from todo import app
+import sqlite3 
+def view():
+    con = sqlite3.connect('test.db')
 
-connection = sq.connect("data.db")
+    cur = con.cursor()
 
-cur = connection.cursor()
+    pulled_data = cur.execute('''SELECT * FROM item''')
 
-cur.execute('''CREATE TABLE IF NOT EXISTS todo(
-               id INTEGER PRIMARY KEY AUTOIMCREMENT,
-               item TEXT NOT NULL)''')
+    for data in pulled_data:
+        print(data)
+
+    con.close()
