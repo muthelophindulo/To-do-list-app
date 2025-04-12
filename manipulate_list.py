@@ -1,16 +1,18 @@
+from database import view
 todo = ["Go to school","Do washing","Write your homeworks"]
 prev_done = []
 #to add to the list
 def add_item(item):
     todo.append(item)
-    return todo
-
+    
+   
 #to view the the list
 def view_list():
-    n = 1
-    for i in todo:
-        print(n,i)
-        n +=1
+    #n = 1
+    #for i in todo:
+        #print(n,i)
+        #n +=1
+    view()
 
 #mark done
 def mark_done():
@@ -28,8 +30,11 @@ def mark_done():
 def view_prev_done():
     n = 1
     for i in prev_done:
-        print(n,i)
-        n +=1
+        if prev_done == None:
+            print("empty")
+        else:    
+            print(n,i)
+            n +=1
 
 #to remove an item
 def remove():
